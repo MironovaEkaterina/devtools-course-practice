@@ -5,7 +5,7 @@
 #include "include/complex_number.h"
 
 TEST(Mironova_Ekaterina_ComplexNumberTest, can_create_complex_number) {
-    ASSERT_NO_THROW(ComplexNumber z(1.0,2.0));
+    ASSERT_NO_THROW(ComplexNumber z(1.0, 2.0));
 }
 
 TEST(Mironova_Ekaterina_ComplexNumberTest, getRe_works_correct) {
@@ -36,7 +36,7 @@ TEST(Mironova_Ekaterina_ComplexNumberTest, setIm_works_correct) {
     EXPECT_DOUBLE_EQ(im, z.getIm());
 }
 
-TEST(Mironova_Ekaterina_ComplexNumberTest, addition_of_two_complex_numbers_is_correct) {
+TEST(Mironova_Ekaterina_ComplexNumberTest, addition_is_correct) {
     double re1 = 1.0, re2 = 3.0;
     double im1 = 2.0, im2 = 4.0;
     ComplexNumber z1(re1, im1), z2(re2, im2), z_res;
@@ -45,7 +45,7 @@ TEST(Mironova_Ekaterina_ComplexNumberTest, addition_of_two_complex_numbers_is_co
     EXPECT_DOUBLE_EQ(im1 + im2, z_res.getIm());
 }
 
-TEST(Mironova_Ekaterina_ComplexNumberTest, subtraction_of_two_complex_numbers_is_correct) {
+TEST(Mironova_Ekaterina_ComplexNumberTest, subtraction_is_correct) {
     double re1 = 1.0, re2 = 3.0;
     double im1 = 2.0, im2 = 4.0;
     ComplexNumber z1(re1, im1), z2(re2, im2), z_res;
@@ -54,7 +54,7 @@ TEST(Mironova_Ekaterina_ComplexNumberTest, subtraction_of_two_complex_numbers_is
     EXPECT_DOUBLE_EQ(im1 - im2, z_res.getIm());
 }
 
-TEST(Mironova_Ekaterina_ComplexNumberTest, multiplication_of_two_complex_numbers_is_correct) {
+TEST(Mironova_Ekaterina_ComplexNumberTest, multiplication_is_correct) {
     double re1 = 1.0, re2 = 3.0;
     double im1 = 2.0, im2 = 4.0;
     ComplexNumber z1(re1, im1), z2(re2, im2), z_res;
@@ -63,7 +63,7 @@ TEST(Mironova_Ekaterina_ComplexNumberTest, multiplication_of_two_complex_numbers
     EXPECT_DOUBLE_EQ(re1 * im2 + re2 * im1, z_res.getIm());
 }
 
-TEST(Mironova_Ekaterina_ComplexNumberTest, division_of_two_complex_numbers_is_correct) {
+TEST(Mironova_Ekaterina_ComplexNumberTest, division_is_correct) {
     double re1 = 5.0, re2 = 3.5;
     double im1 = 2.5, im2 = -6.0;
     ComplexNumber z1(re1, im1), z2(re2, im2), z_res;
