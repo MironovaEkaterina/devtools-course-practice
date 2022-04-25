@@ -64,7 +64,7 @@ TEST(Mironova_Ekaterina_PolygonAreaTest, cant_delete_not_existing_vertex) {
     ASSERT_ANY_THROW(p.deleteVertex(vertex));
 }
 
-TEST(Mironova_Ekaterina_PolygonAreaTest, 
+TEST(Mironova_Ekaterina_PolygonAreaTest,
     can_delete_existing_vertex_by_number) {
     Polygon p;
     double x = 1.5, y = 2.5;
@@ -74,7 +74,7 @@ TEST(Mironova_Ekaterina_PolygonAreaTest,
     ASSERT_NO_THROW(p.deleteVertexByNumber(n));
 }
 
-TEST(Mironova_Ekaterina_PolygonAreaTest, 
+TEST(Mironova_Ekaterina_PolygonAreaTest,
     cant_delete_not_existing_vertex_by_number) {
     Polygon p;
     double x = 1.5, y = 2.5;
