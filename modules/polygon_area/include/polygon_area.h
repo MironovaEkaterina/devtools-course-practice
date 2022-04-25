@@ -19,6 +19,7 @@ class Polygon {
     Polygon();
     void addVertex(std::pair <double, double> new_vertex);
     void deleteVertex(std::pair <double, double> vertex);
+    void deleteVertexByNumber(int number);
     double countPolygonArea();
 };
 

@@ -64,6 +64,43 @@ TEST(Mironova_Ekaterina_PolygonAreaTest, cant_delete_not_existing_vertex) {
     ASSERT_ANY_THROW(p.deleteVertex(vertex));
 }
 
+TEST(Mironova_Ekaterina_PolygonAreaTest, 
+    can_delete_existing_vertex_by_number) {
+    Polygon p;
+    double x = 1.5, y = 2.5;
+    int n = 0;
+    std::pair <double, double> vertex(x, y);
+    p.addVertex(vertex);
+    ASSERT_NO_THROW(p.deleteVertexByNumber(n));
+}
+
+TEST(Mironova_Ekaterina_PolygonAreaTest, 
+    cant_delete_not_existing_vertex_by_number) {
+    Polygon p;
+    double x = 1.5, y = 2.5;
+    int n = 4;
+    std::pair <double, double> vertex(x, y);
+    p.addVertex(vertex);
+    ASSERT_ANY_THROW(p.deleteVertexByNumber(n));
+}
+
+TEST(Mironova_Ekaterina_PolygonAreaTest,
+    cant_delete_not_existing_vertex_by_negative_number) {
+    Polygon p;
+    double x = 1.5, y = 2.5;
+    int n = -1;
+    std::pair <double, double> vertex(x, y);
+    p.addVertex(vertex);
+    ASSERT_ANY_THROW(p.deleteVertexByNumber(n));
+}
+
+TEST(Mironova_Ekaterina_PolygonAreaTest,
+    cant_delete_empty_vertex) {
+    Polygon p;
+    int n = 0;
+    ASSERT_ANY_THROW(p.deleteVertexByNumber(n));
+}
+
 TEST(Mironova_Ekaterina_PolygonAreaTest, can_count_polygon_area) {
     Polygon p;
     double x1 = 3.0, x2 = 5.5, x3 = 8.7, x4 = 2.1, s;

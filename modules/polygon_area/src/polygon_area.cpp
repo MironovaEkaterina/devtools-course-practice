@@ -28,6 +28,16 @@ void Polygon::deleteVertex(std::pair <double, double> vertex) {
         throw std::string("This vertex doesn't exist");
 }
 
+void Polygon::deleteVertexByNumber(int number) {
+    if (number < 0 || number > vertex_num || vertex_num == 0) {
+        throw std::string("This vertex doesn't exist");
+    }
+    else {
+        vertexes.erase(vertexes.begin() + number);
+        vertex_num--;
+    }
+}
+
 double Polygon::countPolygonArea() {
     if (vertex_num < 3)
         throw std::string("It's not a polygon. Add more points");
