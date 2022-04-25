@@ -31,8 +31,7 @@ void Polygon::deleteVertex(std::pair <double, double> vertex) {
 void Polygon::deleteVertexByNumber(int number) {
     if (number < 0 || number > vertex_num || vertex_num == 0) {
         throw std::string("This vertex doesn't exist");
-    }
-    else {
+    } else {
         vertexes.erase(vertexes.begin() + number);
         vertex_num--;
     }
