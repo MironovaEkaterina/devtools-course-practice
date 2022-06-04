@@ -45,7 +45,6 @@ double parseDouble(const char* arg) {
     double value = strtod(arg, &end);
 
     if (end[0]) {
-        
         throw std::string("Wrong number format!");
     }
 
@@ -56,17 +55,13 @@ char* parseOperation(const char* arg) {
     char* op;
     if (strcmp(arg, "get_norm") == 0) {
         op = "get_norm";
-    }
-    else if (strcmp(arg, "get_normalization") == 0) {
+    } else if (strcmp(arg, "get_normalization") == 0) {
         op = "get_normalization";
-    }
-    else if (strcmp(arg, "scalar_mult") == 0) {
+    } else if (strcmp(arg, "scalar_mult") == 0) {
         op = "scalar_mult";
-    }
-    else if (strcmp(arg, "vector_mult") == 0) {
+    } else if (strcmp(arg, "vector_mult") == 0) {
         op = "vector_mult";
-    }
-    else {
+    } else {
         throw std::string("Wrong operation format!");
     }
     return op;
@@ -78,34 +73,29 @@ std::string Application::operator()(int argc, const char** argv) {
     if (!validateNumberOfArguments(argc, argv)) {
         return message_;
     }
-    
     try {
         args.v1_x = parseDouble(argv[1]);
         args.v1_y = parseDouble(argv[2]);
         args.v1_z = parseDouble(argv[3]);
-        args.operation = std::string(parseOperation(argv[4]));       
+        args.operation = std::string(parseOperation(argv[4]));
         if (argc > 5)
             args.v2_x = parseDouble(argv[5]);
         else
             args.v2_x = 0;
-        
         if (argc > 6)
             args.v2_y = parseDouble(argv[6]);
         else
             args.v2_y = 0;
-        
         if (argc > 7)
             args.v2_z = parseDouble(argv[7]);
         else
-            args.v2_z = 0;     
+            args.v2_z = 0;
     }
     catch (std::string& str) {
         return str;
     }
-
     Vector3d v1(args.v1_x, args.v1_y, args.v1_z);
     Vector3d v2(args.v2_x, args.v2_y, args.v2_z);
-
     Vector3d res_vector;
     double res;
     std::ostringstream stream;
