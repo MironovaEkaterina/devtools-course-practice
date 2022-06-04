@@ -51,8 +51,8 @@ double parseDouble(const char* arg) {
     return value;
 }
 
-char* parseOperation(const char* arg) {
-    char* op;
+std::string parseOperation(const char* arg) {
+    std::string op;
     if (strcmp(arg, "get_norm") == 0) {
         op = "get_norm";
     } else if (strcmp(arg, "get_normalization") == 0) {
@@ -77,7 +77,7 @@ std::string Application::operator()(int argc, const char** argv) {
         args.v1_x = parseDouble(argv[1]);
         args.v1_y = parseDouble(argv[2]);
         args.v1_z = parseDouble(argv[3]);
-        args.operation = std::string(parseOperation(argv[4]));
+        args.operation = parseOperation(argv[4]);
         if (argc > 5)
             args.v2_x = parseDouble(argv[5]);
         else
